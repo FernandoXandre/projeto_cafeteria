@@ -63,11 +63,67 @@ public class Main {
 	                    break;
 	
 	                case 3:
-	                    // Menu de pedidos
-	                    // Aqui futuramente serão feitas chamadas
-	                    // para as funções relacionadas a pedidos
-	                    break;
-	
+	                  case 3:
+
+                        int opcaoPedido;
+
+                        System.out.println("\n===== MENU PEDIDOS =====");
+                        System.out.println("1 - Criar pedido");
+                        System.out.println("2 - Listar pedidos");
+                        System.out.println("3 - Buscar pedido");
+                        System.out.println("4 - Cancelar pedido");
+                        System.out.print("Escolha uma opção: ");
+
+                        opcaoPedido = scanner.nextInt();
+
+                        switch (opcaoPedido) {
+
+                            case 1:
+
+                                System.out.print("Digite o ID do pedido: ");
+                                int idPedido = scanner.nextInt();
+
+                                System.out.print("Digite o ID do cliente: ");
+                                int idCliente = scanner.nextInt();
+
+                                PedidoService.criarPedido(idPedido, idCliente);
+
+                                break;
+
+                            case 2:
+
+                                PedidoService.listarPedidos();
+
+                                break;
+
+                            case 3:
+
+                                System.out.print("Digite o ID do pedido: ");
+                                int buscarId = scanner.nextInt();
+
+                                if (PedidoService.buscarPedido(buscarId) != null) {
+                                    System.out.println("Pedido encontrado!");
+                                } else {
+                                    System.out.println("Pedido não encontrado.");
+                                }
+
+                                break;
+
+                            case 4:
+
+                                System.out.print("Digite o ID do pedido para cancelar: ");
+                                int cancelarId = scanner.nextInt();
+
+                                PedidoService.cancelarPedido(cancelarId);
+
+                                break;
+
+                            default:
+                                System.out.println("Opção inválida!");
+
+                        }
+
+                        break;
 	                case 4:
 	                    // Menu de itens do pedido
 	                    // Aqui futuramente serão feitas chamadas
@@ -101,4 +157,5 @@ public class Main {
 
         
     }
+
 }
