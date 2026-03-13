@@ -57,9 +57,10 @@ public class Main {
 		                    break;
 		
 		                case 2:
-		                    // Menu de produtos
-		                    // Aqui futuramente serão feitas chamadas
-		                    // para as funções relacionadas a produtos
+		                	int opcaoProduto = -1;
+		                    while(opcaoProduto != 0) {
+		                    	
+		                    }
 		                    break;
 		
 		                case 3:
