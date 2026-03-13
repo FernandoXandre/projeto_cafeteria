@@ -51,9 +51,24 @@ public class Main {
 		            switch (opcao) {
 		
 		                case 1:
-		                    // Menu de clientes
-		                    // Aqui futuramente serão feitas chamadas
-		                    // para as funções relacionadas a clientes
+						// --- PASSO 2: Implementar o teste de Cadastro e Listagem ---
+                        	System.out.println("\n--- Cadastro de Cliente ---");
+                        	System.out.print("Digite o ID: ");
+                        	int id = scanner.nextInt();
+                        	scanner.nextLine(); // Limpar o buffer do teclado
+
+                        	System.out.print("Digite o Nome: ");
+                        	String nome = scanner.nextLine();
+
+                        	System.out.print("Digite o Telefone: ");
+                        	String telefone = scanner.nextLine();
+
+                        // Chama a função de cadastrar que criamos em lista
+                        	clienteService.cadastrarCliente(id, nome, telefone);
+
+                        // Exibe a lista logo após para conferirmos o resultado
+                        	System.out.println("\n--- Clientes no Sistema ---");
+                        	clienteService.listarClientes();
 		                    break;
 		
 		                case 2:
@@ -102,4 +117,5 @@ public class Main {
 
         
     }
+
 }
